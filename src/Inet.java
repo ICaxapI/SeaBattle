@@ -253,7 +253,7 @@ public class Inet {
             try {
                 BufferedReader reader = null;
                 try {
-                    URL url = new URL("http://myip.by/");
+                    URL url = new URL("https://myip.by/");
                     InputStream inputStream = null;
                     inputStream = url.openStream();
                     reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -266,7 +266,6 @@ public class Inet {
                     }
                     Integer indStart = allText.indexOf("\">whois ");
                     Integer indEnd = allText.indexOf("</a>", indStart);
-
                     String ipAddress = allText.substring(indStart + 8, indEnd);
                     if (ipAddress.split("\\.").length == 4) {
                         result = ipAddress;
